@@ -1,3 +1,4 @@
+// tentando implementar a logica de controle, chamando uma var externa a rota
 const x = ("Mensagem externa");
 
 // rota MOSTRAR livro id:
