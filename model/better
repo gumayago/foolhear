@@ -1,0 +1,36 @@
+1. Extensão "Better Comments" (Recomendado)
+
+Esta extensão categoriza os comentários por cor com base no caractere inicial: 
+Instalação: Vá em Extensions (Ctrl+Shift+X), pesquise por Better Comments e instale.
+Como usar:
+// ! - Vermelho (Alerta/Importante)
+// ? - Azul (Pergunta/Dúvida)
+// TODO - Laranja (Tarefas)
+// * - Verde (Destaque)
+
+3. Outras Extensões Úteis
+Indent Rainbow: Adiciona cores na indentação, facilitando a visualização de blocos de código. 
+
+como criar a função de alerta no js
+
+mapa do app:
+
+/meu-projeto
+├── controller/             == para poder criar as funções e usar os modelos 
+│   ├── homeController.js
+│   ├── cadastroController.js
+│   └── loginController.js
+├── model-server/           == para poder criar os modelos e conversar com o bd
+│   ├── home.js
+│   ├── cadastro.js
+│   └── login.js
+├── node_modules/
+├── routes/                 == para poder criar as rotas e direcionar aos controller's
+│   ├── home.js
+│   ├── cadastro.js
+│   └── login.js
+├── app.js (ou index.js)
+└── bd.sql
+└── index.js
+└── package.json
+└── package-look.json
