@@ -1,3 +1,4 @@
+// exportar conversa do gemini CTR+A e CTRL+P para criar um PDF.
 // Para o trabalho dividir os server's controller's, e as rotas. (para distrinchar corretamente)
 // COMANDOS: npm init -y, npm install express --save, node + nome(index.js) e node --watch index.js
 
