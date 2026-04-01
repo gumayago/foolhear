@@ -1,5 +1,5 @@
 // javascript
-class livro {
+class usuario {
     // O "constructor" é onde os dados entram quando você cria o objeto
     constructor(id, nome, descricao, disponivel, status, preco, categoria) {
         this.id = id;
@@ -17,13 +17,3 @@ class livro {
         return (this.id, this.nome, this.descricao, this.disponivel)
     }
 }
-
-    id PRIMARY KEY AUTO_INCREMENT, //isso é automático, não precisa colocar na hora de criar o livro
-    nome VARCHAR(100) NOT NULL,
-    descricao TEXT,
-    disponivel BOOLEAN  DEFAULT 'ativo',
-    status BOOLEAN DEFAULT 'ativo',
-    -- preco DECIMAL(9,2) NOT NULL, substitui por disponivel/status
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP // ja é automatico, nao precisa colocar na hora de criar o livro
-    categoria_id INT NOT NULL,
-    
