@@ -1,12 +1,11 @@
 1. Extensão "Better Comments" (Recomendado)
 
-Esta extensão categoriza os comentários por cor com base no caractere inicial: 
-Instalação: Vá em Extensions (Ctrl+Shift+X), pesquise por Better Comments e instale.
-Como usar:
-// ! - Vermelho (Alerta/Importante)
-// ? - Azul (Pergunta/Dúvida)
-// TODO - Laranja (Tarefas)
-// * - Verde (Destaque)
+// ! legenda dessa pagina: Todo comentário tem caracteres especiais:
+
+// ! CONCEITO (Vermelho)
+// ? Explicação (Azul)
+// TODO: inteligecia artificial (Laranja)
+// * Destaque (Verde)
 
 3. Outras Extensões Úteis
 Indent Rainbow: Adiciona cores na indentação, facilitando a visualização de blocos de código. 
