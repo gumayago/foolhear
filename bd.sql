@@ -9,10 +9,11 @@ USE folhear;
 
 -- DADOS CLIENTE
 CREATE TABLE cliente(
-    id PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
     CPF VARCHAR(18) NOT NULL UNIQUE,
     email VARCHAR(100) NOT NULL UNIQUE,
+    categoria_id VARCHAR(20) NOT NULL,
     status VARCHAR(20) DEFAULT 'ativo',
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP --autopreenche
     
@@ -21,14 +22,18 @@ CREATE TABLE cliente(
 CREATE TABLE telefone(
     id PRIMARY KEY AUTO_INCREMENT,
     telefone VARCHAR(20) NOT NULL,
-    celular VARCHAR(20)
+    celular VARCHAR(20),
+    cliente_id INT NOT NULL,
+    FOREIGN KEY (cliente_id) REFERENCES cliente(id)
 );
 
-CREATE TABLE endereco(
+CREATE TABLE endereco(  
     id PRIMARY KEY AUTO_INCREMENT,
     rua VARCHAR(100) NOT NULL,
     numero VARCHAR(20) NOT NULL,
-    bairro VARCHAR(100) NOT NULL
+    bairro VARCHAR(100) NOT NULL,
+    cliente_id INT NOT NULL,
+    FOREIGN KEY (cliente_id) REFERENCES cliente(id)
 );
 
 -- DADOS LIVRO
@@ -52,8 +57,10 @@ CREATE TABLE livro(
 );
 
 CREATE TABLE editora(
-        id PRIMARY KEY AUTO_INCREMENT,
+    id PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    telefone VARCHAR(20) NOT NULL,
 );
 
 CREATE TABLE estoque(
@@ -72,7 +79,6 @@ CREATE TABLE estoque(
 
 CREATE TABLE pedido(
     id PRIMARY KEY AUTO_INCREMENT,
-    codigo VARCHAR(20) NOT NULL,
     data_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     data_pedido_entrega TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- +15 dias
     cliente_id INT NOT NULL,
