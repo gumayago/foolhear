@@ -16,7 +16,8 @@ CREATE TABLE cliente(
     categoria_id VARCHAR(20) NOT NULL,
     status VARCHAR(20) DEFAULT 'ativo',
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP --autopreenche
-    
+    img VARCHAR(255) || DEFAULT 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+    senha VARCHAR(255) NOT NULL    
 );
 
 CREATE TABLE telefone(

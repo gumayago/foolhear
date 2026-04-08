@@ -5,7 +5,7 @@ const router = express.Router(); // Cria a instância do roteador
 
 
 //! Rota para LISTAR TODOS OS USUARIOS:
-router.get('/', async (req, res) => {
+router.get('/usuarios', async (req, res) => {
       const [dados] = await db.query("SELECT * FROM usuario");
   res.json({ mensagem: "Lista de usuários:" }, dados);
 });
@@ -20,7 +20,7 @@ router.get('/usuario/:id', async (req, res) => {
 })
 
 
-// rota CRIAR usuario id:
+//! rota CRIAR usuario id:
 router.post('/usuario', async (req, res) => {
   const { id, nome, email, senha } = req.body;
   await db.query("INSERT INTO usuario VALUES (?, ?, ?, ?)", [id, nome, email, senha]);
@@ -64,7 +64,7 @@ app.put('/pilotos/:id', async (req, res) =>{
 // Exporta o roteador para ser usado em outros arquivos
 module.exports = router;
 
-
+/*
 como tornar o miro num pdf
 
 aprendendo sobre o fetch api
@@ -75,4 +75,5 @@ como importar uma rota para o arquivo principal, tipo irei separar as rotas e ch
 
 preciso de uma função que mostre os usuarios, tipo eu vou chamar a rota get usuarios para mostrar todos e quero uma função pra criar o card deles com nome e tudo mais no html (front-end) e que a mesma se atualize pra quando for cadastrado um novo usuario, tipo antes tinha 3 ao ser add ela crie um novo card para o 4 e mostre
 
-extensoes para mudar icones do vs code
+extensoes para mudar icones do vs code 
+*/

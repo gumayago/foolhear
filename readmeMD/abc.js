@@ -1,4 +1,4 @@
-
+/*
 
 // formas de exportar as rotas:
 // O comando module.exports = router; serve para exportar o roteador configurado em um arquivo JavaScript para que ele possa ser utilizado em outras partes da sua aplicação.
@@ -70,8 +70,8 @@ module.exports = router;
 const express = require('express');
 const router = express.Router();
 
-const usuarioRoutes = require('./RotaUsuario');
-const loginRoutes = require('./RotaLogin');
+const usuarioRoutes = require('../routes/RotaUsuario');
+const loginRoutes = require('../routes/RotaLogin');
 
 router.use('/usuarios', usuarioRoutes);
 router.use('/login', loginRoutes);
@@ -107,8 +107,8 @@ No arquivo rotas/index.js (O Agrupador):
 javascript
 const express = require('express');
 const router = express.Router();
-router.use('/usuarios', require('./RotaUsuario'));
-router.use('/login', require('./RotaLogin'));
+router.use('/usuarios', require('../routes/RotaUsuario'));
+router.use('/login', require('../routes/RotaLogin'));
 module.exports = router;
 Use o código com cuidado.
 
