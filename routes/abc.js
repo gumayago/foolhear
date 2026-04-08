@@ -70,8 +70,8 @@ module.exports = router;
 const express = require('express');
 const router = express.Router();
 
-const usuarioRoutes = require('./usuario');
-const loginRoutes = require('./login');
+const usuarioRoutes = require('./RotaUsuario');
+const loginRoutes = require('./RotaLogin');
 
 router.use('/usuarios', usuarioRoutes);
 router.use('/login', loginRoutes);
@@ -107,8 +107,8 @@ No arquivo rotas/index.js (O Agrupador):
 javascript
 const express = require('express');
 const router = express.Router();
-router.use('/usuarios', require('./usuario'));
-router.use('/login', require('./login'));
+router.use('/usuarios', require('./RotaUsuario'));
+router.use('/login', require('./RotaLogin'));
 module.exports = router;
 Use o código com cuidado.
 
