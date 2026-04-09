@@ -2,10 +2,14 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/users', require('./RotaUsuario'));
-router.use('/adm', require('./RotaAdm'));
-router.use('/login', require('./RotaLogin'));
-router.use('/cadastro', require('./RotaCadastro'));
-router.use('/home', require('./RotaHome'));
+
+router.use('/adm', require('./AdmRotas'));
+router.use('/cadastro', require('./CadastroRotas'));
+router.use('/categoria', require('./CategoriaRotas'));
+router.use('/livros', require('./LivroRotas'));
+router.use('/login', require('./LoginRotas'));
+router.use('/usuario', require('./UsuarioRotas'))
+
+
 
 module.exports = router;
