@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const db = require('../db'); // importando o banco de dados para usar nas rotas
+const db = require('../data/bd'); // importando o banco de dados para usar nas rotas
 
 //==================================================================================
 // rota login:
