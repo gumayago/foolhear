@@ -177,3 +177,4 @@ WHERE id = 4;
 SELECT * FROM cliente;
 
 carlos aqui estou fazendo um committ
+sdsadsadas
