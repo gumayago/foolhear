@@ -175,3 +175,5 @@ SELECT * FROM categoria;
 DELETE FROM cliente
 WHERE id = 4;
 SELECT * FROM cliente;
+
+WESLEY
