@@ -22,7 +22,7 @@ app.use('/api', usuarioRotas);
 
 
 // rota inicial
-app.get('/', (req, res) => {
+app.get('/', (req, res)=> {
        // --- ESTE É O SEU "ALERT" ---
     console.log('✅ A rota principal foi acessada!');                
     res.json({ mensagem: 'API Funcionando: HOME' });
