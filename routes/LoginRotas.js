@@ -9,8 +9,10 @@ const db = require('../data/bd'); // importando o banco de dados para usar nas r
 
 
 router.get('/login:email', async (req, res) => {
-    try {
-        const [dados] = await db.query("SELECT senha FROM cliente where email = ?", [req.params.id]);
+  i=0
+  while (!req.params.email) {
+        try {
+        const [dados] = await db.query("SELECT senha FROM cliente where email = ?", [req.params.email]);
         if (email==email && senha == senha) {
     alert("email correto, acesso liberado!");
     carregarCategoriasSelect();
@@ -20,7 +22,10 @@ router.get('/login:email', async (req, res) => {
     } catch (err) {
         res.status(500).json({ erro: err.message });
     }
+    i++
+};   
 });
+
 
 module.exports = router;
 
