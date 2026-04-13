@@ -176,4 +176,3 @@ DELETE FROM cliente
 WHERE id = 4;
 SELECT * FROM cliente;
 
-WESLEY
