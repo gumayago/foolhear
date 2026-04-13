@@ -16,3 +16,7 @@ app.get('/cadastro', async (req, res) => {
     res.json(dados)
     // aqui transferimos o indice "[0]" do objeto JSON para a VARIAVEL "dados" para otimizar e vc ""SEMPRE"" vai querer o indicde O que vem do banco, logo os dados da entidade q vc deseja.
 })
+
+
+
+module.exports = router;

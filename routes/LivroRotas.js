@@ -29,5 +29,9 @@ router.put('/livro', (req, res) => {
 // rota DELETAR livros id:
 router.delete('/livro', (req, res) => {
   res.send('<h1> criar livro </h1>');
-  res.send(x);
+  res.JSON(x);
 });
+
+
+
+module.exports = router;
