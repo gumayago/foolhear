@@ -59,4 +59,5 @@ BEGIN
 END; //
 
 DELIMITER ;
-como deixar o adm fazer crud e os demais usuarios acessarem apenas o get, tipo dar permissao apenas para aguns
+como deixar o adm fazer crud e os demais usuarios acessarem apenas o get, tipo dar permissao apenas para aguns 
+*/
