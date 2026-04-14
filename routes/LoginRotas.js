@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../data/bd');
+const db = require('../data/db');
 
 // Usamos POST para login porque a senha não deve aparecer na URL
 router.post('/login', async (req, res) => {
