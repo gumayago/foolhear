@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/gumayago/foolhear#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.0"
   }
 }
