@@ -7,7 +7,7 @@ const db = require('../data/bd'); // importando o banco de dados para usar nas r
 //==================================================================================
 // rota categoria:
 router.get('/categoria', (req, res) => {
-  res.send('<h1> Categorias: </h1> ')
+  res.json('<h1> Categorias: </h1> ')
 });
 
 
