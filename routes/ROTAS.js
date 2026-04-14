@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 
-router.use('/adm', require('./AdmRotas'));
+
 router.use('/cadastro', require('./CadastroRotas'));
 router.use('/categoria', require('./CategoriaRotas'));
 router.use('/livros', require('./LivroRotas'));

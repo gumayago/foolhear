@@ -8,16 +8,16 @@ const port = 3000
 app.use(cors()); // Libera o acesso do seu HTML para o servidor
 app.use(express.json()); // Faz o Express entender o JSON que o Fetch enviou
 app.use(express.Router()); // Roteador para organizar as rotas do servidor
-
+app.use(express.urlencoded({ extended: true })); // Entende formulários HTML
 
 // Importa as rotas
 const usuarioRotas = require('./routes/UsuarioRotas');
-
+const rotas = require('./routes/rotas');
 // Aplica as rotas com o prefixo /api
 app.use('/api', usuarioRotas);
 //app.use('/api', require('./routes/RotaUsuario')); 
 
-
+app.use('/api', rotas); // Aplica as rotas do arquivo rotas.js com o prefixo /api); 
 
 
 
@@ -31,8 +31,9 @@ app.get('/', (req, res)=> {
 
 //app.listen(3000, () => console.log("Servidor ON"));
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+    console.log(`✨ Servidor voando na porta ${port} ✨`);
+});
+
 
 
 //! duvidas !

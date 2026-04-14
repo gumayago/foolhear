@@ -1,7 +1,7 @@
 {
   "name": "foolhear",
   "version": "1.0.0",
-  "description": "",
+  "description": "/*\r /FOLHEAR\r /backend\r |\r |\r └── index.js             # Arquivo principal (ponto de entrada)\r |\r ├── /data (banco de dados)# Scripts SQL para criação e manipulação do banco de dados\r │   ├── bd.sql           # Script para criar tabelas e inserir dados iniciais\r │   └── bd.js            # Configuração de conexão com o banco de dados \r | \r ├── /rotas               # Camada de rotas da API\r │   └── CadastroRotas.js # Gerencia as rotas relacionadas ao cadastro de usuários\r │   └── LoginRotas.js    # Gerencia as rotas relacionadas ao login\r │   └── CategoriaRotas.js# Gerencia as rotas relacionadas às categorias\r │   └── LivroRotas.js    # Gerencia as rotas relacionadas aos livros\r │   └── UsuarioRotas.js  # Gerencia as rotas relacionadas aos usuários\r │   └── AdmRotas.js      # Gerencia as rotas relacionadas aos administradores\r └── /readme.md           # Documentação do projeto",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

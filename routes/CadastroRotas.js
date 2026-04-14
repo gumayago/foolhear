@@ -10,7 +10,7 @@ const db = require('../data/bd'); // importando o banco de dados para usar nas r
 // Rota específica para listar apenas os usuários administradores
 router.get('/cliente', async (req, res) => {
     try {
-        const [dados] = await db.query("SELECT * FROM usuario where adm = 1");
+        const [dados] = await db.query("SELECT * FROM cliente where adm = 1");
         res.json({ mensagem: "Lista de administradores:", dados }); // Objeto único
     } catch (err) {
         res.status(500).json({ erro: err.message });
@@ -21,10 +21,10 @@ router.get('/cliente', async (req, res) => {
 
 router.get('/cliente/:id', async (req,res) =>{
     const id = req.params.id
-   const [dados] = await db.query("SELECT * FROM adm WHERE id = ?",[id])
+   const [dados] = await db.query("SELECT * FROM cliente WHERE id = ?",[id])
 
     if (dados.legth === 0){
-  return res.status(404).json({erro:"piloto não encontrado"})}
+  return res.status(404).json({erro:"cliente não encontrado"})}
    else{ res.json(dados)}
 })
 
@@ -33,20 +33,20 @@ router.get('/cliente/:id', async (req,res) =>{
 
 router.post('/cliente/:id', async (req,res) =>{
    const {id , nome, email, telefone, rua, numero, bairro, imagem, senha, adm} = req.body;
-   await db.query("INSERT INTO adm VALUES (?,?,?)",
+   await db.query("INSERT INTO cliente VALUES (?,?,?,?,?,?,?,?,?,?)",
     [id,nome,email, telefone, rua, numero, bairro, imagem, senha, adm],)
    res.status(201).json(req.body);
 });
 
 router.put('/cliente/:id', async (req,res) =>{
    const {nome, email, telefone, rua, numero, bairro, imagem, senha, adm} = req.body;
-   await db.query("UPDATE adm SET nome = ?, email=?, telefone=?, rua=?, numero=?, bairro=?, imagem=?, senha=?, adm=? WHERE id=?",
+   await db.query("UPDATE cliente SET nome = ?, email=?, telefone=?, rua=?, numero=?, bairro=?, imagem=?, senha=?, adm=? WHERE id=?",
     [nome,email, telefone, rua, numero, bairro, imagem, senha, adm, req.params.id])
    res.status(201).json(req.body);
 });
 
 router.delete("/cliente/:id", async (req,res) =>{
-   await db.query("DELETE FROM adm WHERE id=?",[req.params.id])
+   await db.query("DELETE FROM cliente WHERE id=?",[req.params.id])
    res.json({deleted: req.params.id});
 });
 
