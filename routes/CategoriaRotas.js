@@ -5,23 +5,6 @@ const router = express.Router();
 const db = require('../data/db'); // importando o banco de dados para usar nas rotas
 
 //==================================================================================
-<<<<<<< Updated upstream
-
-=======
-// rota categoria:
-router.get('/categoria', async (req, res) => {
-    try {
-        const [dados] = await db.query("SELECT * FROM categoria");
-         console.log('✅ A rota CATEGORIA foi acessada!');    
-        res.json({ mensagem: "Lista de categoria: ", dados }); // Objeto categoria
-    } catch (err) {
-        res.status(500).json({ erro: err.message });
-    }
-});
-
-
-// SELECT * FROM categoria;
->>>>>>> Stashed changes
 router.get('/categoria', async (req, res) => {
     const dados = await db.query( "SELECT * FROM categoria")
     console.log(dados)
