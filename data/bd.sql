@@ -4,6 +4,7 @@ select version();
 
 -- ========================== BD folhear =====================================
 -- ========================== CRIAÇÃO DE DADOS =====================================
+DROP DATABASE folhear;
 CREATE DATABASE folhear;
 
 USE folhear;

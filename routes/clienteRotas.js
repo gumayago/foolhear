@@ -33,10 +33,11 @@ router.get('/cliente/:id', async (req,res) =>{
 
 
 
-router.post('/cliente/:id', async (req,res) =>{
-   const {id , nome, email, telefone, rua, numero, bairro, imagem, senha, adm} = req.body;
-   await db.query("INSERT INTO cliente VALUES (?,?,?)",
-    [id,nome,email, telefone, rua, numero, bairro, imagem, senha, adm],)
+router.post('/cliente', async (req,res) =>{
+   const {nome, email, telefone, rua, numero, bairro, img, senha, cpf} = req.body;
+   console.log(req.body);
+   await db.query("INSERT INTO cliente VALUES (?,?,?,?,?,?,?,?,?)",
+    [nome, email, telefone, rua, numero, bairro, img, senha, cpf])
    res.status(201).json(req.body);
 });
 
