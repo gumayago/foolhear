@@ -9,9 +9,6 @@ const db = require('../data/db'); // importando o banco de dados para usar nas r
 const x = ("Mensagem externa");
 
 // rota MOSTRAR livro id:
-router.get('/livro', (req, res) => {
-  res.json('<h1> livro: </h1> ')
-});
 
 router.get('/livro', async (req, res) => {
     const dados = await db.query( "SELECT * FROM livro")

@@ -5,16 +5,10 @@ const router = express.Router();
 const db = require('../data/db'); // importando o banco de dados para usar nas rotas
 
 //==================================================================================
-// rota categoria:
-router.get('/categoria', (req, res) => {
-  res.json('<h1> Categorias: </h1> ')
-});
 
-
-// SELECT * FROM piloto;
 router.get('/categoria', async (req, res) => {
     const dados = await db.query( "SELECT * FROM categoria")
-    console.log(dados, )
+    console.log(dados)
     res.json(dados[0])
 })
 
