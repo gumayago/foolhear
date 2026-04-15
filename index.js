@@ -11,6 +11,7 @@ app.use(express.Router()); // Roteador para organizar as rotas do servidor
 app.use(express.urlencoded({ extended: true })); // Entende formulários HTML
 
 // Importa as rotas
+<<<<<<< Updated upstream
 const usuarioRotas = require('./routes/UsuarioRotas');
 const cadastroRotas = require('./routes/CadastroRotas'); //!!!
 const categoriaRotas = require('./routes/CategoriaRotas');
@@ -18,16 +19,26 @@ const livroRotas = require('./routes/LivroRotas');
 const loginRotas = require('./routes/LoginRotas');
 
 const rotas = require('./routes/ROTAS');
+=======
+const usuarioRotas = require('./routes/clienteRotas');
+const cadastroRotas = require('./routes/CadastroRotas');
+const categoriaRotas = require('./routes/CategoriaRotas')
+const categoriaRotas = require('./routes/CategoriaRotas')
+const Rotas = require('./routes/rotas');
+>>>>>>> Stashed changes
 // Aplica as rotas com o prefixo /api
 app.use('/api', usuarioRotas);
 app.use('/api', cadastroRotas);
 app.use('/api', categoriaRotas);
+<<<<<<< Updated upstream
 app.use('/api', livroRotas);
 app.use('/api', loginRotas);
 
+=======
+>>>>>>> Stashed changes
 //app.use('/api', require('./routes/RotaUsuario')); 
 
-app.use('/api', rotas); // Aplica as rotas do arquivo rotas.js com o prefixo /api); 
+app.use('/api', Rotas); // Aplica as rotas do arquivo rotas.js com o prefixo /api); 
 
 
 
@@ -44,31 +55,3 @@ app.listen(port, () => {
     console.log(`✨ Servidor voando na porta ${port} ✨`);
 });
 
-
-
-//! duvidas !
-/*
-sqlDELIMITER //
-
-
-CREATE TRIGGER tg_atualiza_status_livro 
-AFTER UPDATE ON Estoque 
-FOR EACH ROW
-BEGIN
-    -- Se a quantidade chegar a 0, muda o status para 'indisponivel'
-    IF NEW.quantidade = 0 THEN
-        UPDATE Livros 
-        SET status = 'indisponivel' 
-        WHERE id_livro = NEW.id_livro;
-    
-    -- Se a quantidade for maior que 0 (ex: reposição), volta para 'disponivel'
-    ELSEIF NEW.quantidade > 0 THEN
-        UPDATE Livros 
-        SET status = 'disponivel' 
-        WHERE id_livro = NEW.id_livro;
-    END IF;
-END; //
-
-DELIMITER ;
-como deixar o adm fazer crud e os demais usuarios acessarem apenas o get, tipo dar permissao apenas para aguns 
-*/
