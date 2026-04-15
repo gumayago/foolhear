@@ -12,9 +12,19 @@ app.use(express.urlencoded({ extended: true })); // Entende formulários HTML
 
 // Importa as rotas
 const usuarioRotas = require('./routes/UsuarioRotas');
-const rotas = require('./routes/rotas');
+const cadastroRotas = require('./routes/CadastroRotas'); //!!!
+const categoriaRotas = require('./routes/CategoriaRotas');
+const livroRotas = require('./routes/LivroRotas');
+const loginRotas = require('./routes/LoginRotas');
+
+const rotas = require('./routes/ROTAS');
 // Aplica as rotas com o prefixo /api
 app.use('/api', usuarioRotas);
+app.use('/api', cadastroRotas);
+app.use('/api', categoriaRotas);
+app.use('/api', livroRotas);
+app.use('/api', loginRotas);
+
 //app.use('/api', require('./routes/RotaUsuario')); 
 
 app.use('/api', rotas); // Aplica as rotas do arquivo rotas.js com o prefixo /api); 
