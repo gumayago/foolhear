@@ -25,19 +25,19 @@ router.get('/livro/:id', async (req,res) =>{
    else{ res.json(dados)}
 })
 // rota CRIAR livro id:
-router.post('/livro/:id', async (req,res) =>{
-   const {id,nome, descricao, categoria_id, img, autor_id, estoque_id} = req.body;
-   await db.query("INSERT INTO livro VALUES (?,?,?)",
-    [id,nome, descricao, categoria_id, img, autor_id, estoque_id],)
+router.post('/livro', async (req,res) =>{
+   const {nome, descricao, categoria_id, img, autor_id, estoque_id} = req.body;
+   await db.query("INSERT INTO livro VALUES (?,?,?,?,?,?)",
+    [nome, descricao, categoria_id, img, autor_id, estoque_id],)
    res.status(201).json(req.body);
 });
 
 
 // rota EDITAR/UPDATE livros id:
 router.put('/livro/:id', async (req,res) =>{
-   const {nome, descricao, categoria_id, img, autor_id, estoque_id} = req.body;
-   await db.query("UPDATE livro SET nome = ?, img=? WHERE id=?",
-    [nome, descricao, categoria_id, img, autor_id, estoque_id])
+   const {id,nome, descricao, categoria_id, img, autor_id, estoque_id} = req.body;
+   await db.query("UPDATE livro SET id=?, nome = ?,descrição=?, categoria_id=?, img=?, estoque=? WHERE id=?, nome = ?,descrição=?, categoria_id=?, img=?, estoque=?",
+    [id,nome, descricao, categoria_id, img, autor_id, estoque_id])
    res.status(201).json(req.body);
 });
 

@@ -23,7 +23,7 @@ router.get('/categoria/:id', async (req,res) =>{
 
 //  criar rota que busque todos as categorias
 // add um planeta no bd
-router.post('/categoria/:id', async (req,res) =>{
+router.post('/categoria', async (req,res) =>{
    const {id, nome, img} = req.body;
    await db.query("INSERT INTO categoria VALUES (?,?,?)",
     [id,nome, img],)
