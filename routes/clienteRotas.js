@@ -34,10 +34,10 @@ router.get('/cliente/:id', async (req,res) =>{
 
 
 router.post('/cliente', async (req,res) =>{
-   const {nome, email, telefone, rua, numero, bairro, img, senha, cpf} = req.body;
+   const {nome, cpf, email, telefone, rua, numero, bairro, img, senha} = req.body;
    console.log(req.body);
-   await db.query("INSERT INTO cliente VALUES (?,?,?,?,?,?,?,?,?)",
-    [nome, email, telefone, rua, numero, bairro, img, senha, cpf])
+   await db.query("INSERT INTO cliente (nome, cpf, email, telefone, rua, numero, bairro, img, senha) VALUES (?,?,?,?,?,?,?,?,?)",
+    [nome, cpf, email, telefone, rua, numero, bairro, img, senha])
    res.status(201).json(req.body);
 });
 
